@@ -15,7 +15,7 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(../img/cover-photo.jpg);
+    background: url(/img/cover-photo.jpg);
     background-size: cover;
     background-position: right;
     display: flex;
@@ -357,7 +357,7 @@ img {
     .toggle {
         width: 40px;
         height: 40px;
-        background: url(/menu.png);
+        background: url(/png/menu.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
@@ -365,7 +365,7 @@ img {
     }
 
     .toggle.active {
-        background: url(/cancel.png);
+        background: url(/png/cancel.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 25px;
