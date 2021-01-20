@@ -15,6 +15,7 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
+    background: url(https://github.com/nickbenz007/my-portfolio/Assets/cover-photo.jpg);
     background-size: cover;
     background-position: right;
     display: flex;
