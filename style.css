@@ -4,55 +4,94 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     scroll-behavior: smooth;
 }
 
 section {
     padding: 100px;
+    background-color: gainsboro;
 }
 
 .banner {
     position: relative;
-    min-height: 100vh;
-    background: url(./Assets/cover-photo.jpg);
-    background-size: cover;
-    background-position: right;
     display: flex;
-    justify-content: space-between;
+    background-color: #2196f3;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-repeat: no-repeat;
+}
+
+.banner a{
+    text-decoration: none;
 }
 
 .banner h2 {
     font-size: 3em;
-    color: #ffffff;
-    font-weight: 500;
-    line-height: 1.5em;
-}
-
-.banner h2 span {
-    font-size: 1.5em;
+    color: white;
     font-weight: 700;
 }
 
-.banner h3 {
-    font-size: 1.5em;
-    color: #ffffff;
-    font-weight: 500;
+.banner span {
+    font-size: 1em;
+    font-weight: 700;
+    color: black;
 }
 
-.btn {
+.banner h3 {
+    font-size: 1rem;
+    color:white;
+    font-weight: 300;
+}
+.textbx {
+    display: column;
+    align-items: flex-start;
+    justify-items:flex-start;
+    max-width: 600px;
+    margin: 2rem, 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+.btn-follow {
     position: relative;
-    background: #2196f3;
+    background: black;
     display: inline-block;
+    padding: 14px 4rem;
+    border-radius: 0.5rem;
     color: #ffffff;
-    margin-top: 20px;
-    padding: 10px 30px;
     font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: 500;
+    text-transform: capitalize;
+    font-weight: 200;
+    margin: 20px 0px;
+    border: floralwhite 1px solid;
+}
+.btn-follow:hover {
+    background-color:#EAEAEA;
+    padding: 14px 4rem;
+    color: black;
+    margin: 20px 0px;
+    transition: 0.5s ease-in-out;
+}
+
+.hero-image {
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+    min-height: 500px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid white;
+    background-image: url('Assets/Nick-Benz-New.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 5px 5px 15px black;
+
 }
 
 header {
@@ -89,15 +128,28 @@ header ul {
 
 header ul li {
     position: relative;
-    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 5px;
+    /* border: 1px solid #2196f3; */
+}
+ul li:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s ease-in
 }
 
-header ul li a {
+a {
     position: relative;
     display: inline-block;
-    margin: 0 15px;
-    color: #ffffff;
+    color: white;
+    padding: 5px 20px;
+    
+}
+a:hover{
     text-decoration: none;
+    color: white
 }
 
 .heading {
@@ -178,7 +230,6 @@ img {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
 }
 
 .work .content .workBx {
@@ -321,7 +372,7 @@ img {
 }
 
 /* Responsive */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
 
     header,
     header.sticky {
@@ -380,21 +431,24 @@ img {
         padding: 100px 50px;
     }
 
-    .banner {
-        padding: 150px 50px 100px;
-    }
-
     .banner h2 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     .banner h3 {
-        font-size: 1em;
+        font-size: 0.9em;
+    }
+    .banner span{
+        font-size: 2rem;
+    }
+
+    .textbx {
+        min-width: 400px;
     }
 
     .btn {
         margin-top: 10px;
-        padding: 10px 20px;
+        padding: 10px 16px;
         font-size: 16px;
     }
 
@@ -439,13 +493,19 @@ img {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     header header.sticky {
         padding: 20px 20px;
     }
 
     .banner {
         padding: 150px 20px 100px;
+    }
+
+    .banner {
+        padding: 10px 50px 100px;
+        display: grid;
+        grid-template-columns: calc(2);
     }
 
     section {
