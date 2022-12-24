@@ -9,14 +9,13 @@
 }
 
 section {
-  padding: 100px;
   background-color: gainsboro;
 }
 
 .banner {
   position: relative;
   display: flex;
-  background-color: #2196f3;
+  background-color: #222222;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -28,22 +27,24 @@ section {
   text-decoration: none;
 }
 
-.banner h2 {
-  font-size: 3em;
+.banner .textbx h2 {
+  font-size: 3rem;
   color: white;
   font-weight: 700;
 }
 
-.banner span {
-  font-size: 1em;
-  font-weight: 700;
-  color: black;
+.banner .textbx span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2196f3;
 }
 
-.banner h3 {
+.banner .textbx h3 {
   font-size: 1rem;
   color: white;
-  font-weight: 300;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 1px;
 }
 .textbx {
   display: column;
@@ -131,7 +132,6 @@ header ul li {
   text-decoration: none;
   margin: 5px;
   border-radius: 5px;
-  /* border: 1px solid #2196f3; */
 }
 ul li:hover {
   background-color: black;
@@ -151,41 +151,63 @@ a:hover {
 }
 
 .heading {
-  width: 100%;
+  display: block;
   text-align: center;
-  margin-bottom: 30px;
-  color: #111111;
+  padding: 1rem 0rem;
 }
 
 .heading h2 {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 3rem;
 }
 
 .content {
   display: flex;
-  justify-content: space-between;
+  grid-template-columns: repeat(2);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
 }
 
 .contentBx {
-  padding-right: 30px;
+  max-width: 100%;
+  max-height: auto;
+  padding: 1rem 4rem;
 }
 
-.contentBx h3 {
-  font-size: 24px;
+.contentBx h2 {
   margin-bottom: 10px;
 }
 
-.w50 {
+.contentBx p {
+  font-size: 0.5;
+  font-weight: 600;
+  color: #121212;
+}
+
+.info-div {
+  max-width: 600px;
+  height: auto;
+  margin: 0 2rem;
+  padding: 1rem;
+}
+
+.w50 h3 {
   min-width: 50%;
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 img {
-  max-width: 100%;
+  max-width: 600px;
+  border-radius: 2rem;
+  margin: 1rem auto;
 }
 
 .services {
   background: #111111;
+  display: grid;
+  flex-direction: column;
 }
 
 .heading.white {
@@ -197,6 +219,9 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  background-color: black;
+  border-radius: 2rem;
+  padding: 2rem;
 }
 
 .services .content .servicesBx {
@@ -204,38 +229,48 @@ img {
   background: #222222;
   color: #ffffff;
   max-width: 300px;
+  min-height: 350px;
   margin: 16px;
   text-align: center;
   transition: 0.5s;
+  border-radius: 10px;
 }
 
 .services .content .servicesBx:hover {
   background: #2196f3;
+  cursor: pointer;
 }
 
-.services .content .servicesBx img {
-  max-width: 80px;
+.servicesBx img {
+  max-width: 100px;
+  background-color: white;
   filter: invert(1);
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 1rem;
 }
 
 .services .content .servicesBx h2 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 400;
 }
 
-.work .content {
+.work {
+  display: grid;
+  grid-template-columns: repeat(2);
+  align-items: center;
+  justify-content: center;
+}
+.content {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.work .content .workBx {
-  width: 50%;
-  padding: 20px;
-}
-
-.work.content .workBx img {
-  max-width: 100%;
+.work .content .workBx img {
+  max-width: 400px;
+  margin: 20px;
 }
 
 .testimonial {
@@ -423,8 +458,9 @@ img {
     filter: invert(1);
   }
 
-  section {
-    padding: 100px 50px;
+  .banner .textbx {
+    margin: 10px 20px;
+    padding: 10px 10px;
   }
 
   .banner h2 {
@@ -449,15 +485,18 @@ img {
   }
 
   .heading h2 {
-    font-size: 24px;
+    font-size: 2rem;
+    font-weight: 800;
   }
 
   .contentBx h3 {
     font-size: 20px;
   }
 
-  .content {
-    flex-direction: column;
+  .work .content {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
   }
 
   .w50 {
@@ -487,6 +526,18 @@ img {
   .contactInfo {
     margin: 20px 0;
   }
+  img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 2rem;
+    margin: 1rem auto;
+  }
+  .work {
+    display: grid;
+    grid-template-columns: calc(2);
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -494,8 +545,25 @@ img {
     padding: 20px 20px;
   }
 
-  .banner {
-    padding: 150px 20px 100px;
+  .banner .textbx {
+    margin: 5rem 0.5rem;
+    padding: 20px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content .img {
+    max-width: 600px;
+  }
+
+  .work .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .banner {
@@ -504,7 +572,122 @@ img {
     grid-template-columns: calc(2);
   }
 
-  section {
-    padding: 100px 20px;
+  .content .workBxCont .workBx img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 2rem;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 425px) {
+  header header.sticky {
+    padding: 20px 20px;
+  }
+
+  .hero-image {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 500px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid white;
+    background-image: url("Assets/Nick-Benz-New.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px black;
+  }
+
+  .banner .textbx {
+    padding: 40px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content .img {
+    max-width: 300px;
+  }
+
+  .work .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner {
+    padding: 10px 50px 100px;
+    display: grid;
+    grid-template-columns: calc(1);
+  }
+
+  .content .workBxCont .workBx img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 2rem;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 375px) {
+  header header.sticky {
+    padding: 20px 20px;
+  }
+
+  .hero-image {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 500px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid white;
+    background-image: url("Assets/Nick-Benz-New.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px black;
+  }
+
+  .banner .textbx {
+    /* margin: 5rem 0.5rem; */
+    padding: 40px;
+    /* background-color: aqua; */
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content .img {
+    max-width: 300px;
+  }
+
+  .work .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner {
+    padding: 10px 50px 100px;
+    display: grid;
+    grid-template-columns: calc(1);
+  }
+
+  .content .workBxCont .workBx img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 2rem;
+    margin: 1rem auto;
   }
 }
